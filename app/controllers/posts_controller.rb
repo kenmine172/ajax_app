@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   end
 
   def checked
+    binding.pry
     post = Post.find(params[:id])
     if post.checked
       post.update(checked: false)
@@ -19,7 +20,7 @@ class PostsController < ApplicationController
       post.update(checked: true)
     end
       
-    item = Post.find(params|:id|)
+    item = Post.find(params[:id])
     render json: { post: item}
     end
 end
